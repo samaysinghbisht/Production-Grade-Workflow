@@ -1,0 +1,29 @@
+version : '3'
+
+services:
+    web:
+        build:
+            context : .
+            dockerfile: Dockerfile.dev
+
+        ports:
+            - "3000:3000"
+
+        volumes: 
+            - /home/node/app/node_modules
+            # as we have deleted the node_modules folder from our host directory
+            #so we are telling container to ignore node_modules folder inside the docker container, and keeping it as it is using above command.
+            - .:/home/node/app
+
+
+    test:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        
+        volumes: 
+            - /home/node/app/node_modules
+            - .:/home/node/app
+
+        command: ["npm", "run", "test"]
+        # Overriding default command of Dockerfile.dev
