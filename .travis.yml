@@ -1,0 +1,12 @@
+sudo: required
+services:
+ - docker
+  
+
+before-install:
+ - docker build -t samay/workflow-test -f Dockerfile.dev .
+
+scripts:
+ - docker run samay/workflow-test npm run test -- --coverage
+ # -- --coverage makes sure test execution gets exited as soon as the test cases are executed one time.
+ # because by default npm run test command give you option to perform different tasks once the execution is completed and we want to avoid it on travis-ci
