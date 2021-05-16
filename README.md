@@ -1,6 +1,6 @@
 # Production Grade Workflow using Dockerfile, Dockerfile.dev, docker-compose.yml and Nginx server.
 
-## This is a simple web app bootstrapped with **[Create React App](https://github.com/facebook/create-react-app/?target=_blank)**.
+## This is a simple web app bootstrapped with **[Create React App](https://github.com/facebook/create-react-app/ "Visit Facebook Open Source Git Repo")**.
 
 This is a demo app built with an intention to successfully deploy a react.js app on **Ngnix Server** and can be served to end user. 
 
@@ -32,7 +32,7 @@ This is a demo app built with an intention to successfully deploy a react.js app
 | Command | Description |
 | --- | --- |
 docker build -t image-name -f Dockerfile.dev . | *This will create an image for the whole project and tagging it with a name.*
-docker run -p host_port:3000 image-name | *This will start the Development Environment server and you can access the project on [localhost:3000](http://localhost:3000) (**If you have mapped it to port 3000 on host machine**).*
+docker run -p host_port:3000 image-name | *This will start the Development Environment server and you can access the project on [localhost:3000](http://localhost:3000 "Visit localhost:3000 Development Server") (**If you have mapped it to port 3000 on host machine**).*
 docker run image-name npm run test | *This will start Unit Tests in the project by overriding the primary command of the container to npm run test.*
 docker run -v /home/node/app/node_modules -v $(pwd):/home/node/app -p 3000:3000 container-id | This will start running docker container with volume mapping of host system directory with container's file system, this enable the changes to be reflected on browser without rebuilding the docker file.
 <br>
@@ -50,7 +50,7 @@ docker-compose up | *This will start building the project using the provided con
 | Command | Description |
 | --- | --- |
 docker build -t image-name . | *This will create a production optimized build ready to be served and tagging it with a name.*
-docker run -p host_port:80 image-name | *This will start the container with Nginx server and map it to the specified host port and can be viewed on [localhost:8080](http://localhost:8080) (**If you have mapped it to port 8080 on host machine**). *
+docker run -p host_port:80 image-name | *This will start the container with Nginx server and map it to the specified host port and can be viewed on [localhost:8080](http://localhost:8080 "Visit localhost:8080 Nginx Deployment Server") (**If you have mapped it to port 8080 on host machine**). *
 <br>
 
 
