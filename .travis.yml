@@ -1,12 +1,24 @@
 sudo: required
 services:
- - docker
+  - docker
   
 
 before-install:
- - docker build -t samay/workflow-test -f Dockerfile.dev .
+  - docker build -t samay/workflow-test -f Dockerfile.dev .
 
 scripts:
- - docker run -e CI=true samay/workflow-test npm run test 
+  - docker run -e CI=true samay/workflow-test npm run test 
  # -- --coverage makes sure test execution gets exited as soon as the test cases are executed one time.
  # because by default npm run test command give you option to perform different tasks once the execution is completed and we want to avoid it on travis-ci
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-production-grade-workflow"
+  env: "Dockerproductiongradeworkflow-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-132174339745"
+  bucket_path: "docker-production-grade-workflow"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

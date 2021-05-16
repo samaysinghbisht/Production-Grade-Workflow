@@ -15,5 +15,7 @@ RUN npm run build
 
 FROM nginx
 
+EXPOSE 80
+
 COPY --from=builder /app/build /usr/share/nginx/html
 # Using output from last container and copying only the files which are required for deployment into Nginx container's target directory
