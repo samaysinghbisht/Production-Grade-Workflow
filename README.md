@@ -1,6 +1,6 @@
 # Production Grade Workflow using Dockerfile, Dockerfile.dev, docker-compose.yml and Nginx server.
 
-## This is a simple web app bootstrapped with **[Create React App](https://github.com/facebook/create-react-app/?target=_blank){:target="_blank" rel="noopener"} **.
+## This is a simple web app bootstrapped with **[Create React App](https://github.com/facebook/create-react-app/?target=_blank) **.
 
 This is a demo app built with an intention to successfully deploy a react.js app on **Ngnix Server** and can be served to end user. 
 
