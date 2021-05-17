@@ -2,7 +2,17 @@
 
 ## This is a simple web app bootstrapped with **[Create React App](https://github.com/facebook/create-react-app/ "Visit Facebook Open Source Git Repo")**.
 
-This is a demo app built with an intention to successfully deploy a react.js app on **Ngnix Server** and can be served to end user. 
+This is a demo app built with an intention to successfully deploy a react.js app on **AWS BEANSTALK** and can be served to end user. 
+Note: You can also deploy this app on your local server by just using *Dockerfile* in the root directory, it will get deployed on **NGINX server**
+
+**Some pre-requisites to start with this projects:**
+1. Docker and docker-compose should be installed on your local machine.
+2. Basic knowledge of GitHub.
+3. Basic knowledge of Travis-CI
+4. Basic knowledge of AWS and it's services will be plus.
+
+>Find out how docker works [here]().
+>Note: Steps to configure AWS and Travis-CI to automate the build generation can be found [here](https://github.com/Samay1993/Production-Grade-Workflow/blob/master/AWS_Config.md).
 
 ## Production flows implemented:
 * Development Flow and running the application on development server.
