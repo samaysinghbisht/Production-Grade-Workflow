@@ -1,9 +1,9 @@
-# Production Grade Workflow using Dockerfile, Dockerfile.dev, docker-compose.yml and Nginx server.
+# Production Grade Workflow using Dockerfile, Dockerfile.dev, docker-compose.yml and Nginx server later deploying the app on AWS Elastic Beanstalk using Travis-CI and serve it to the end user(s).
 
 ## This is a simple web app bootstrapped with **[Create React App](https://github.com/facebook/create-react-app/ "Visit Facebook Open Source Git Repo")**.
 
 This is a demo app built with an intention to successfully deploy a react.js app on **AWS BEANSTALK** and can be served to end user. 
-Note: You can also deploy this app on your local server by just using *Dockerfile* in the root directory, it will get deployed on **NGINX server**
+>Note: You can also deploy this app on your local server by just using *Dockerfile* present in the root directory of this project, it will get deployed on **NGINX server**
 
 **Some pre-requisites to start with this projects:**
 1. Docker and docker-compose should be installed on your local machine.
@@ -11,8 +11,7 @@ Note: You can also deploy this app on your local server by just using *Dockerfil
 3. Basic knowledge of Travis-CI
 4. Basic knowledge of AWS and it's services will be plus.
 
->Find out how docker works [here](https://github.com/Samay1993/Production-Grade-Workflow/blob/master/DockerIntro.md).<br>
->Note: Steps to configure AWS and Travis-CI to automate the build generation can be found [here](https://github.com/Samay1993/Production-Grade-Workflow/blob/master/AWS_Config.md).
+>If you are new to Docker find out how docker works [here](https://github.com/Samay1993/Production-Grade-Workflow/blob/master/DockerIntro.md/ "Open DockerIntro.md").<br>
 
 ## Production flows implemented:
 * Development Flow and running the application on development server.
@@ -53,6 +52,7 @@ docker run -v /home/node/app/node_modules -v $(pwd):/home/node/app -p 3000:3000 
 docker-compose up | *This will start building the project using the provided configuration and start Development server and start running the test suite too.*
 
 ### **Note: Volume Mapping is also implemented in *docker-compose.yml*.**
+**Make a small change to your src/App.js file in the greeting text and see the changes getting reflected on your browser realtime without you having to rebuild the image that's the power of volume mapping.**
 <br>
 
 
@@ -65,3 +65,9 @@ docker run -p host_port:80 image-name | *This will start the container with Ngin
 
 
 ### **Note: Nginx default port is 80.**
+
+## Deployment of AWS using Travis-CI
+
+Once you are satisfied with the way your application work on your deployment server(NGINX) you can go ahead and configure your AWS and Travis CI to automate the build deployment as soon as you push your changes to the *master branch* of the project.
+>Steps to configure AWS and Travis-CI to automate the build generation can be found [here](https://github.com/Samay1993/Production-Grade-Workflow/blob/master/AWS_Config.md/ "Open AWS_Cofig.md").
+
